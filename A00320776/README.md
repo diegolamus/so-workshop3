@@ -13,6 +13,21 @@
 * Aplicativo strace
 
 ## Solucion
+**1.** execve() : esta llamada al sistema permite ejecutar un programa. Para que esta llamada ejecute un programa, este debe ser un binario o un script que inicie con  "#! interpreter [arg]".   
+
+      parametros:  
+            1. filename: nombre del archivo que se va a ejecutar.  
+            2. args: es un arreglo de strings. La primera posición por lo general recibe el nombre del archivo que se va a ejetcutar dentro del archivo que se esta ejecutando.  
+            3. envp: es un arreglo de estring en la forma Key=value; se usa para inicializar las variables de entorno del programa.
+            
+**2.** getuid() : esta llamada al sistema retorna la ID real del usuario que esta ejecutando el proceso.  
+**3.**  nmap(): crea un mapeo en el espacio de direcciones virtuales del proceso.
+
+      parametros:  
+            1. addr: la dirección d inicio para el nuevo mapeo, Si se deja en null el kernel elige donde poner el mapeo.
+            2. length: especifica el largo del mapeo.
+            3. prot: describe la seguridad de la memoria del mapeo; recibe los siguientes valores: PROT_EXEC  Pages may be executed. PROT_READ  Pages may be read. PROT_WRITE Pages may be written. PROT_NONE  Pages may not be accessed.
+            
 
 ### Descripción
 El tercer taller del curso sistemas operativos trata sobre las llamadas al sistema y su importancia para el sistema operativo
