@@ -26,7 +26,11 @@
       parametros:  
             1. addr: la dirección d inicio para el nuevo mapeo, Si se deja en null el kernel elige donde poner el mapeo.
             2. length: especifica el largo del mapeo.
-            3. prot: describe la seguridad de la memoria del mapeo; recibe los siguientes valores: PROT_EXEC  Pages may be executed. PROT_READ  Pages may be read. PROT_WRITE Pages may be written. PROT_NONE  Pages may not be accessed.
+            3. prot: describe la seguridad de la memoria del mapeo. recibe los siguientes valores:  
+                PROT_EXEC  Pages may be executed.  
+                PROT_READ  Pages may be read.  
+                PROT_WRITE Pages may be written.  
+                PROT_NONE  Pages may not be accessed.
             
 
 ### Descripción
