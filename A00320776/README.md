@@ -21,17 +21,26 @@
             3. envp: es un arreglo de estring en la forma Key=value; se usa para inicializar las variables de entorno del programa.
             
 **2.** getuid() : esta llamada al sistema retorna la ID real del usuario que esta ejecutando el proceso.  
-**3.**  nmap(): crea un mapeo en el espacio de direcciones virtuales del proceso.
+**3.** nmap(): crea un mapeo en el espacio de direcciones virtuales del proceso.
 
       parametros:  
             1. addr: la dirección d inicio para el nuevo mapeo, Si se deja en null el kernel elige donde poner el mapeo.
             2. length: especifica el largo del mapeo.
             3. prot: describe la seguridad de la memoria del mapeo. recibe los siguientes valores:  
-                PROT_EXEC  Pages may be executed.  
-                PROT_READ  Pages may be read.  
-                PROT_WRITE Pages may be written.  
-                PROT_NONE  Pages may not be accessed.
+                PROT_EXEC  Las páginas pueden ser ejecutadas.  
+                PROT_READ  Las páginas pueden ser leidas.  
+                PROT_WRITE Las páginas pueden ser escritas.  
+                PROT_NONE  Las páginas no tienen acceso.
+            4. flags: determina si las actualizaciones en el mapeo son visibles a otros procesos mapeando la misma region.
+            5. fd: file descriptor.
+            6. offset: starting point of the file.
+    
+**4.** close(): cierra y libera un file descriptor, para que no pueda ser usado por por ningun archivo y pueda ser reusado. Cualquier tipo de lock que tuviera el archivo asociado al file descriptor se libera, asi como tambien se libera el archivo al cual hacia referencia.  
+
+      parameros:  
+            1.fd: file descriptor: numero que identifica un archivo o un proceso.  
             
+**5.**          
 
 ### Descripción
 El tercer taller del curso sistemas operativos trata sobre las llamadas al sistema y su importancia para el sistema operativo
