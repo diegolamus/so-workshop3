@@ -7,11 +7,6 @@
 ### Objetivos
 * Conocer y explicar la función de las llamadas al sistema en un sistema operativo
 
-### Prerrequisitos
-* Virtualbox o WMWare
-* Máquina virtual con sistema operativo CentOS7
-* Aplicativo strace
-
 ## Solucion
 **1.** execve() : esta llamada al sistema permite ejecutar un programa. Para que esta llamada ejecute un programa, este debe ser un binario o un script que inicie con  "#! interpreter [arg]".   
 
@@ -20,7 +15,8 @@
             2. args: es un arreglo de strings. La primera posición por lo general recibe el nombre del archivo que se va a ejetcutar dentro del archivo que se esta ejecutando.  
             3. envp: es un arreglo de estring en la forma Key=value; se usa para inicializar las variables de entorno del programa.
             
-**2.** getuid() : esta llamada al sistema retorna la ID real del usuario que esta ejecutando el proceso.  
+**2.** getuid() : esta llamada al sistema retorna la ID real del usuario que esta ejecutando el proceso.
+
 **3.** nmap(): crea un mapeo en el espacio de direcciones virtuales del proceso.
 
       parametros:  
@@ -38,12 +34,16 @@
 **4.** close(): cierra y libera un file descriptor, para que no pueda ser usado por por ningun archivo y pueda ser reusado. Cualquier tipo de lock que tuviera el archivo asociado al file descriptor se libera, asi como tambien se libera el archivo al cual hacia referencia.  
 
       parameros:  
-            1.fd: file descriptor: numero que identifica un archivo o un proceso.  
+            1. fd: file descriptor: numero que identifica un archivo o un proceso.  
             
-**5.**          
+**5.** read(): intenta leer cierta cantidad de bytes de un archivo que permite busqueda identificado por un file descriptor.  
+      
+      parametros:
+            1. fd: identifica el archivo que se va a leer.
+            2. buf: identifica el punto de inicio del buffer al que se va a introducir la lectura.
+            3. count: cuenta cuantos bytes se van a leer desde el offset del archivo.  
+            
 
-### Descripción
-El tercer taller del curso sistemas operativos trata sobre las llamadas al sistema y su importancia para el sistema operativo
 
 ### Actividades
 
