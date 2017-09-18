@@ -15,6 +15,9 @@
             2. args: es un arreglo de strings. La primera posición por lo general recibe el nombre del archivo que se va a ejetcutar dentro del archivo que se esta ejecutando.  
             3. envp: es un arreglo de estring en la forma Key=value; se usa para inicializar las variables de entorno del programa.
             
+            
+![execve()](/imagenes/execve.png)
+            
 **2.** getuid() : esta llamada al sistema retorna la ID real del usuario que esta ejecutando el proceso.
 
 **3.** nmap(): crea un mapeo en el espacio de direcciones virtuales del proceso.
