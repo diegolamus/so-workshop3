@@ -54,27 +54,13 @@
 ![](/A00320776/imagenes/read.png)
 
 
-**6.** 
-### Actividades
+**6.** Al compilar el programa y hacerle strace se observan las siguientes llamadas al sistemas:
 
-2. Realice la compilación del código fuente adjunto y su ejecución empleando el aplicativo **strace**. Identifique las llamadas al sistema encargadas de enviar y recibir datos a través de la red. A partir de los manuales de Linux en Internet o del sistema operativo explique las llamadas al sistema encontradas y sus parámetros.
+![](/A00320776/imagenes/curlsyscalls.png)  
 
-**Nota:** Cuando compile programas tenga en cuenta que estos pueden necesitar la instalación de librerías para su compilación y ejecución.
-
-**Debian**
-```
-# apt-get install libcurl4-openssl-dev
-$ gcc -o curl curl.c -lcurl
-```
-**CentOS**
-```
-# yum install libcurl-devel
-$ gcc -o curl curl.c -lcurl
-```
-
-### Nota
-
-El informe debe ser entregado en formato README.md y debe ser subido a un repositorio de github. El repositorio de github debe ser un fork de https://github.com/ICESI-Training/so-workshop3 y para la entrega deberá hacer un Pull Request (PR) respetando la estructura definida. El código fuente y la url de github deben incluirse en el informe.  
+Los llamados para enciar y recibir datos a travez de la red son los siguientes:
+**a.** pipe:
+ 
 
 ## Referencias
 
