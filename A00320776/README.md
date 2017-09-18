@@ -58,10 +58,43 @@
 
 ![](/A00320776/imagenes/curlsyscalls.png)  
 
-Los llamados para enciar y recibir datos a travez de la red son los siguientes:
-**a.** pipe:
- 
 
+En las llamadas al sistema en la lista del programa curl no se encuentran syscalls utilizadas para envier o recivir datos en la red. Algunas de las llamadas al sistema para enviar o recibir datos en la red son las siguientes:  
+
+
+**a.**  send()  -- enviar  (solo cuando hay un socket  en estado de conexion)
+
+      parametros: 
+      1. sockfd: file descriptor del socket de envio.
+      2. buf: mensaje
+      3. len: largo del mensaje
+      4. flags: banderas para indicar cosas  necesarias.
+     
+**b.**  sendto()  -- enviar
+
+      parametros: 
+      1. sockfd: file descriptor del socket de envio.
+      2. buf: mensaje
+      3. len: largo del mensaje
+      4. flags: banderas para indicar cosas  necesarias.  
+      5. dest_addr: direccion de destino (se ignora en modo conexion)  
+      6. addrlen: largo de la direccion de destino (se ignora en modo conexion)  
+       
+**c.**  sendmsg()  -- enviar
+
+      parametros: 
+      1. sockfd: file descriptor del socket de envio.
+      2. msg: mensaje najo la estructura de msghdr
+      3. flags  
+      
+**c.**  srecv()  -- recibir
+
+      parametros: 
+      1. sockfd: file descriptor del socket del que se recibe.
+      2. buf: buffer de destino del mensaje
+      3. len: largo del mensaje
+      4. flags
+      
 ## Referencias
 
 * http://man7.org/linux/man-pages/man2/syscalls.2.html  
